@@ -1,0 +1,157 @@
+[
+  {
+    "code": { "type": "literal", "value": "AT" }, 
+    "countryname": { "type": "literal", "value": "Austria" }, 
+    "publishingCode": { "type": "literal", "value": "AT" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "BE" }, 
+    "countryname": { "type": "literal", "value": "Belgium" }, 
+    "publishingCode": { "type": "literal", "value": "BE" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "BG" }, 
+    "countryname": { "type": "literal", "value": "Bulgaria" }, 
+    "publishingCode": { "type": "literal", "value": "BG" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "CH" }, 
+    "countryname": { "type": "literal", "value": "Switzerland" }, 
+    "publishingCode": { "type": "literal", "value": "CH" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "CY" }, 
+    "countryname": { "type": "literal", "value": "Cyprus" }, 
+    "publishingCode": { "type": "literal", "value": "CY" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "CZ" }, 
+    "countryname": { "type": "literal", "value": "Czechia" }, 
+    "publishingCode": { "type": "literal", "value": "CZ" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "DE" }, 
+    "countryname": { "type": "literal", "value": "Germany" }, 
+    "publishingCode": { "type": "literal", "value": "DE" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "DK" }, 
+    "countryname": { "type": "literal", "value": "Denmark" }, 
+    "publishingCode": { "type": "literal", "value": "DK" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "EE" }, 
+    "countryname": { "type": "literal", "value": "Estonia" }, 
+    "publishingCode": { "type": "literal", "value": "EE" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "ES" }, 
+    "countryname": { "type": "literal", "value": "Spain" }, 
+    "publishingCode": { "type": "literal", "value": "ES" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "FI" }, 
+    "countryname": { "type": "literal", "value": "Finland" }, 
+    "publishingCode": { "type": "literal", "value": "FI" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "FR" }, 
+    "countryname": { "type": "literal", "value": "France" }, 
+    "publishingCode": { "type": "literal", "value": "FR" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "GR" }, 
+    "countryname": { "type": "literal", "value": "Greece" }, 
+    "publishingCode": { "type": "literal", "value": "EL" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "HR" }, 
+    "countryname": { "type": "literal", "value": "Croatia" }, 
+    "publishingCode": { "type": "literal", "value": "HR" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "HU" }, 
+    "countryname": { "type": "literal", "value": "Hungary" }, 
+    "publishingCode": { "type": "literal", "value": "HU" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "IE" }, 
+    "countryname": { "type": "literal", "value": "Ireland" }, 
+    "publishingCode": { "type": "literal", "value": "IE" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "IS" }, 
+    "countryname": { "type": "literal", "value": "Iceland" }, 
+    "publishingCode": { "type": "literal", "value": "IS" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "IT" }, 
+    "countryname": { "type": "literal", "value": "Italy" }, 
+    "publishingCode": { "type": "literal", "value": "IT" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "LI" }, 
+    "countryname": { "type": "literal", "value": "Liechtenstein" }, 
+    "publishingCode": { "type": "literal", "value": "LI" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "LT" }, 
+    "countryname": { "type": "literal", "value": "Lithuania" }, 
+    "publishingCode": { "type": "literal", "value": "LT" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "LU" }, 
+    "countryname": { "type": "literal", "value": "Luxembourg" }, 
+    "publishingCode": { "type": "literal", "value": "LU" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "LV" }, 
+    "countryname": { "type": "literal", "value": "Latvia" }, 
+    "publishingCode": { "type": "literal", "value": "LV" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "MT" }, 
+    "countryname": { "type": "literal", "value": "Malta" }, 
+    "publishingCode": { "type": "literal", "value": "MT" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "NL" }, 
+    "countryname": { "type": "literal", "value": "Netherlands" }, 
+    "publishingCode": { "type": "literal", "value": "NL" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "NO" }, 
+    "countryname": { "type": "literal", "value": "Norway" }, 
+    "publishingCode": { "type": "literal", "value": "NO" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "PL" }, 
+    "countryname": { "type": "literal", "value": "Poland" }, 
+    "publishingCode": { "type": "literal", "value": "PL" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "PT" }, 
+    "countryname": { "type": "literal", "value": "Portugal" }, 
+    "publishingCode": { "type": "literal", "value": "PT" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "RO" }, 
+    "countryname": { "type": "literal", "value": "Romania" }, 
+    "publishingCode": { "type": "literal", "value": "RO" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "SE" }, 
+    "countryname": { "type": "literal", "value": "Sweden" }, 
+    "publishingCode": { "type": "literal", "value": "SE" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "SI" }, 
+    "countryname": { "type": "literal", "value": "Slovenia" }, 
+    "publishingCode": { "type": "literal", "value": "SI" }
+  }, 
+  {
+    "code": { "type": "literal", "value": "SK" }, 
+    "countryname": { "type": "literal", "value": "Slovakia" }, 
+    "publishingCode": { "type": "literal", "value": "SK" }
+  }
+]

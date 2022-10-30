@@ -3,7 +3,12 @@ const webpack = require("webpack");
 const fs = require("fs");
 
 module.exports = {
-  entry: './src/main.ts',
+  entry: {
+    'index': './src/index.js',
+    'selectcountries': './src/selectcountries.js',
+    'planservice': './src/planservice.js',
+    'optimallocations': './src/optimallocations.js'
+  },
   devtool: "inline-source-map",
   module: {
     rules: [
@@ -12,13 +17,17 @@ module.exports = {
         use: 'ts-loader',
         exclude: /node_modules/,
       },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader"]
+      }
     ],
   },
   resolve: {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [

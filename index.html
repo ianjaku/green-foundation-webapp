@@ -10,11 +10,61 @@
     crossorigin=""/>
   <link rel="stylesheet" href="style/reset.css">
   <link rel="stylesheet" href="style/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.css"/>
 </head>
 <body>
 
-  <div id="map"></div>
+  <div id="map" class="map map--index"></div>
 
-  <script src="/dist/bundle.js"></script>
+  <header class="header-menu">
+    <a href="/newservice.html" class="header-menu__button">
+      + plan a new service
+    </a>
+  </header>
+
+  <div class="data-center" id="data-center">
+    <header class="data-center__header">
+      <h1 class="data-center__title" id="title">
+        Frankfurt
+      </h1>
+      <div class="data-center__row">
+        <div class="data-center__label">
+          Region name
+        </div>
+        <div class="data-center__value">
+          euw-3
+        </div>
+      </div>
+      <div class="data-center__row">
+        <div class="data-center__label">
+          Energy efficiency
+        </div>
+        <div class="data-center__value">
+          <a href="#">
+            60%
+          </a>
+        </div>
+      </div>
+      <div class="data-center__row">
+        <div class="data-center__label">
+          Services
+        </div>
+        <div class="data-center__value">
+          <a href="#">
+            3 services
+          </a>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <script
+    src="https://unpkg.com/leaflet@1.9.2/dist/leaflet.js"
+    integrity="sha256-o9N1jGDZrf5tS+Ft4gbIK7mYMipq9lqpVJ91xHSyKhg="
+    crossorigin=""
+  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/0.4.2/leaflet.draw.js"></script>
+  <script src="/dist/index.js"></script>
 </body>
 </html>
+
