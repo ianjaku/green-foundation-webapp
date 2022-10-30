@@ -1,0 +1,372 @@
+[
+  {
+    "name": "N. Virginia",
+    "full_name": "US East (N. Virginia)",
+    "code": "us-east-1",
+    "public": true,
+    "zones": [
+      "us-east-1a",
+      "us-east-1b",
+      "us-east-1c",
+      "us-east-1d",
+      "us-east-1e",
+      "us-east-1f"
+    ],
+    "coords": [
+      42.8621735,
+      -84.908957
+    ]
+  },
+  {
+    "name": "Ohio",
+    "full_name": "US East (Ohio)",
+    "code": "us-east-2",
+    "public": true,
+    "zones": [
+      "us-east-2a",
+      "us-east-2b",
+      "us-east-2c"
+    ],
+    "coords": [
+      40.3631892,
+      -82.66965755000001
+    ]
+  },
+  {
+    "name": "N. California",
+    "full_name": "US West (N. California)",
+    "code": "us-west-1",
+    "public": true,
+    "zone_limit": 2,
+    "zones": [
+      "us-west-1a",
+      "us-west-1b",
+      "us-west-1c"
+    ],
+    "coords": [
+      33.9470382,
+      -118.41849285
+    ]
+  },
+  {
+    "name": "Oregon",
+    "full_name": "US West (Oregon)",
+    "code": "us-west-2",
+    "public": true,
+    "zones": [
+      "us-west-2a",
+      "us-west-2b",
+      "us-west-2c",
+      "us-west-2d"
+    ],
+    "coords": [
+      44.14231325,
+      -120.58334375
+    ]
+  },
+  {
+    "name": "Canada",
+    "full_name": "Canada (Central)",
+    "code": "ca-central-1",
+    "public": true,
+    "zones": [
+      "ca-central-1a",
+      "ca-central-1b",
+      "ca-central-1c",
+      "ca-central-1d"
+    ],
+    "coords": [
+      62.5063842,
+      -96.6632582
+    ]
+  },
+  {
+    "name": "Stockholm",
+    "full_name": "EU (Stockholm)",
+    "code": "eu-north-1",
+    "public": true,
+    "zones": [
+      "eu-north-1a",
+      "eu-north-1b",
+      "eu-north-1c"
+    ],
+    "coords": [
+      59.325117199999994,
+      18.0710935
+    ]
+  },
+  {
+    "name": "Ireland",
+    "full_name": "EU (Ireland)",
+    "code": "eu-west-1",
+    "public": true,
+    "zones": [
+      "eu-west-1a",
+      "eu-west-1b",
+      "eu-west-1c"
+    ],
+    "coords": [
+      53.429,
+      -8.33580755
+    ]
+  },
+  {
+    "name": "London",
+    "full_name": "EU (London)",
+    "code": "eu-west-2",
+    "public": true,
+    "zones": [
+      "eu-west-2a",
+      "eu-west-2b",
+      "eu-west-2c"
+    ],
+    "coords": [
+      51.4893171,
+      -0.08817979999999997
+    ]
+  },
+  {
+    "name": "Paris",
+    "full_name": "EU (Paris)",
+    "code": "eu-west-3",
+    "public": true,
+    "zones": [
+      "eu-west-3a",
+      "eu-west-3b",
+      "eu-west-3c"
+    ],
+    "coords": [
+      48.85886575,
+      2.3469411
+    ]
+  },
+  {
+    "name": "Frankfurt",
+    "full_name": "EU (Frankfurt)",
+    "code": "eu-central-1",
+    "public": true,
+    "zones": [
+      "eu-central-1a",
+      "eu-central-1b",
+      "eu-central-1c"
+    ],
+    "coords": [
+      50.12124765,
+      8.6365827
+    ]
+  },
+  {
+    "name": "Milan",
+    "full_name": "EU (Milan)",
+    "code": "eu-south-1",
+    "public": true,
+    "zones": [
+      "eu-south-1a",
+      "eu-south-1b",
+      "eu-south-1c"
+    ],
+    "coords": [
+      45.46129315,
+      9.1594985
+    ]
+  },
+  {
+    "name": "Cape Town",
+    "full_name": "Africa (Cape Town)",
+    "code": "af-south-1",
+    "public": true,
+    "zones": [
+      "af-south-1a",
+      "af-south-1b",
+      "af-south-1c"
+    ],
+    "coords": [
+      -33.928991999999994,
+      18.417396
+    ]
+  },
+  {
+    "name": "Tokyo",
+    "full_name": "Asia Pacific (Tokyo)",
+    "code": "ap-northeast-1",
+    "public": true,
+    "zone_limit": 3,
+    "zones": [
+      "ap-northeast-1a",
+      "ap-northeast-1b",
+      "ap-northeast-1c",
+      "ap-northeast-1d"
+    ],
+    "coords": [
+      28.056502799999997,
+      145.02961325
+    ]
+  },
+  {
+    "name": "Seoul",
+    "full_name": "Asia Pacific (Seoul)",
+    "code": "ap-northeast-2",
+    "public": true,
+    "zones": [
+      "ap-northeast-2a",
+      "ap-northeast-2b",
+      "ap-northeast-2c",
+      "ap-northeast-2d"
+    ],
+    "coords": [
+      37.564966749999996,
+      126.97410149999999
+    ]
+  },
+  {
+    "name": "Osaka",
+    "full_name": "Asia Pacific (Osaka-Local)",
+    "code": "ap-northeast-3",
+    "public": true,
+    "zones": [
+      "ap-northeast-3a",
+      "ap-northeast-3b",
+      "ap-northeast-3c"
+    ],
+    "coords": [
+      34.661557,
+      135.38624545
+    ]
+  },
+  {
+    "name": "Singapore",
+    "full_name": "Asia Pacific (Singapore)",
+    "code": "ap-southeast-1",
+    "public": true,
+    "zones": [
+      "ap-southeast-1a",
+      "ap-southeast-1b",
+      "ap-southeast-1c"
+    ],
+    "coords": [
+      1.32002285,
+      104.04165265
+    ]
+  },
+  {
+    "name": "Sydney",
+    "full_name": "Asia Pacific (Sydney)",
+    "code": "ap-southeast-2",
+    "public": true,
+    "zones": [
+      "ap-southeast-2a",
+      "ap-southeast-2b",
+      "ap-southeast-2c"
+    ],
+    "coords": [
+      -33.768714,
+      150.80236150000002
+    ]
+  },
+  {
+    "name": "Jakarta",
+    "full_name": "Asia Pacific (Jakarta)",
+    "code": "ap-southeast-3",
+    "public": true,
+    "zones": [
+      "ap-southeast-3a",
+      "ap-southeast-3b",
+      "ap-southeast-3c"
+    ],
+    "coords": [
+      -5.6869105,
+      106.6443241
+    ]
+  },
+  {
+    "name": "Hong Kong",
+    "full_name": "Asia Pacific (Hong Kong)",
+    "code": "ap-east-1",
+    "public": true,
+    "zones": [
+      "ap-east-1a",
+      "ap-east-1b",
+      "ap-east-1c"
+    ],
+    "coords": [
+      22.2464669,
+      114.2094645
+    ]
+  },
+  {
+    "name": "Mumbai",
+    "full_name": "Asia Pacific (Mumbai)",
+    "code": "ap-south-1",
+    "public": true,
+    "zones": [
+      "ap-south-1a",
+      "ap-south-1b",
+      "ap-south-1c"
+    ],
+    "coords": [
+      19.08171685,
+      72.87904075
+    ]
+  },
+  {
+    "name": "São Paulo",
+    "full_name": "South America (São Paulo)",
+    "code": "sa-east-1",
+    "public": true,
+    "zone_limit": 2,
+    "zones": [
+      "sa-east-1a",
+      "sa-east-1b",
+      "sa-east-1c"
+    ],
+    "coords": [
+      -23.682827699999997,
+      -46.5956902
+    ]
+  },
+  {
+    "name": "Bahrain",
+    "full_name": "Middle East (Bahrain)",
+    "code": "me-south-1",
+    "public": true,
+    "zones": [
+      "me-south-1a",
+      "me-south-1b",
+      "me-south-1c"
+    ],
+    "coords": [
+      26.1111222,
+      50.596582
+    ]
+  },
+  {
+    "name": "Beijing",
+    "full_name": "China (Beijing)",
+    "code": "cn-north-1",
+    "public": false,
+    "zones": [
+      "cn-north-1a",
+      "cn-north-1b",
+      "cn-north-1c"
+    ],
+    "coords": [
+      39.906217,
+      116.3912757
+    ]
+  },
+  {
+    "name": "Ningxia",
+    "full_name": "China (Ningxia)",
+    "code": "cn-northwest-1",
+    "public": false,
+    "zones": [
+      "cn-northwest-1a",
+      "cn-northwest-1b",
+      "cn-northwest-1c"
+    ],
+    "coords": [
+      37.3102851,
+      105.96836905
+    ]
+  }
+]

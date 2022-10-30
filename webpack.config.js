@@ -7,7 +7,8 @@ module.exports = {
     'index': './src/index.js',
     'selectcountries': './src/selectcountries.js',
     'planservice': './src/planservice.js',
-    'optimallocations': './src/optimallocations.js'
+    'optimallocations': './src/optimallocations.js',
+    'all_locations': './src/pages/all_locations.js'
   },
   devtool: "inline-source-map",
   module: {

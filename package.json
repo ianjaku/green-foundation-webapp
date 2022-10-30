@@ -23,6 +23,7 @@
     "@bopen/leaflet-area-selection": "^0.7.0",
     "jsvectormap": "^1.5.1",
     "leaflet": "^1.9.2",
-    "leaflet-draw": "^1.0.4"
+    "leaflet-draw": "^1.0.4",
+    "mitt": "^3.0.0"
   }
 }

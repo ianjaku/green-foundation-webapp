@@ -8,3 +8,4 @@
   - Outliers?
   - Outliers should signify that more datacenters are necessary (only if the outlier is big)
 
+- Can we show uptime of a datacenter?
