@@ -1,6 +1,7 @@
 import dataCenters from "../data/data_centers.json";
 import mitt from "mitt";
-import { createLeafletMap, addCircle, setCircleBorder } from "../components/leafletmap";
+import { createLeafletMap, addCircle, setCircleBorder } from "../components/leaflet_map";
+import { showDataCenterInfoBox } from "../components/data_center_info_box";
 
 
 const map = createLeafletMap('map');
@@ -29,21 +30,6 @@ const getDataCenterEfficiency = (dataCenterCode) => {
 
 const selectionEmitter = mitt();
 
-const dataCenterInfoEl = document.querySelector(".data-center");
-const titleEl = dataCenterInfoEl.querySelector("#title");
-const regionNameEl = dataCenterInfoEl.querySelector("#regionName");
-const efficiencyEl = dataCenterInfoEl.querySelector("#efficiency");
-const setDataCenterInfo = (dataCenterCode) => {
-  const dataCenter = dataCenters.find(dc => dc.code === dataCenterCode);
-
-  titleEl.innerHTML = dataCenter.full_name;
-  regionNameEl.innerHTML = dataCenter.code;
-
-  const efficiency = getDataCenterEfficiency(dataCenterCode);
-  efficiencyEl.innerHTML = Math.round(efficiency * 100) + "%"
-  console.log(dataCenter);
-  dataCenterInfoEl.classList.add("data-center--active");
-}
 
 dataCenters.forEach(dataCenter => {
   const efficiency = getDataCenterEfficiency(dataCenter.code);
@@ -58,7 +44,14 @@ dataCenters.forEach(dataCenter => {
   selectionEmitter.on("select", (code) => {
     if (code === dataCenter.code) {
       setCircleBorder(circle, "blue");
-      setDataCenterInfo(dataCenter.code);
+      showDataCenterInfoBox(
+        dataCenter.full_name,
+        [
+          { label: "Region name", value: dataCenter.code },
+          { label: "Carbon Efficiency", value: Math.round(efficiency * 100) + "%" },
+          { label: "Services", value: "x services" }
+        ]
+      )
     } else {
       setCircleBorder(circle, "none");
     }
