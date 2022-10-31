@@ -1,9 +1,9 @@
-import { addCircle, createGenericMap, setCircleBorder } from "../genericmap/generic_map";
 import dataCenters from "../data/data_centers.json";
 import mitt from "mitt";
+import { createLeafletMap, addCircle, setCircleBorder } from "../components/leafletmap";
 
 
-const map = createGenericMap('map');
+const map = createLeafletMap('map');
 
 // Get best and worst efficiency
 const ratings = dataCenters.map(dataCenter => {

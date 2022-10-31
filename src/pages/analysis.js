@@ -1,7 +1,7 @@
-import { createGenericMap } from "../genericmap/generic_map";
+import { createLeafletMap } from "../components/leafletmap";
 import dataCenters from "../data/data_centers.json";
 
-const map = createGenericMap("map");
+const map = createLeafletMap("map");
 
 /**
  * List of places 
