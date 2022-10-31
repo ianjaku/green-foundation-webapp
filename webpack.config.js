@@ -4,11 +4,8 @@ const fs = require("fs");
 
 module.exports = {
   entry: {
-    'index': './src/index.js',
-    'selectcountries': './src/selectcountries.js',
-    'planservice': './src/planservice.js',
-    'optimallocations': './src/optimallocations.js',
-    'all_locations': './src/pages/all_locations.js'
+    'all_locations': './src/pages/all_locations.js',
+    'analysis': './src/pages/analysis.js'
   },
   devtool: "inline-source-map",
   module: {

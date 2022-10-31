@@ -5,8 +5,6 @@ import mitt from "mitt";
 
 const map = createGenericMap('map');
 
-// map.addCircle()
-
 // Get best and worst efficiency
 const ratings = dataCenters.map(dataCenter => {
   const rating = Math.floor(Math.random() * 500) + 100;
@@ -20,7 +18,6 @@ const bestRating = ratings.reduce((a, b) => a.value < b.value ? a : b);
 const worstRating = ratings.reduce((a, b) => a.value > b.value ? a : b);
 
 /**
- * 
  * @param {string} dataCenterCode 
  * @returns {number} from 0 to 1, 0 = worst, 1 = best efficiency (from all datacenters)
  */

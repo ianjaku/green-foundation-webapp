@@ -38,10 +38,6 @@ export const addCircle = (
       onClick(e);
     });
   }
-  
-  // circle.setStyle({
-  //   fillColor
-  // })
 
   return circle;
 }
