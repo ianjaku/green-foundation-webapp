@@ -7,7 +7,16 @@
 
 - [ ] Edit current text to say "stack" instead of "service"
 - [x] In analysis.html, show all data centers as circles on the generic map
-- [ ] In analysis.html, color code data center circles depending on their relative carbon efficiency
-- [ ] In analysis.html, show extra information about a stack when clicking on it's circle on the map
+- [x] In analysis.html, color code data center circles depending on their relative carbon efficiency
+- [x] In analysis.html, show extra information about a stack when clicking on it's circle on the map
+- [x] In the analysis, show a circle around the selected data center
 - [ ] Add an explanation that analysis is of your current stack, and all_locations compares all available data centers.
+- [ ] In the analysis, show a list of better data centers when a data center is selected
 - [ ] Write more todos
+
+# Questions
+
+- Problem with mercator projection :/
+- How do we calculate efficiency?
+  - worst -> best
+  - best x percent
