@@ -51,7 +51,7 @@ dataCenters.forEach(dataCenter => {
           { label: "Carbon Efficiency", value: Math.round(efficiency * 100) + "%" },
           { label: "Services", value: "x services" }
         ]
-      )
+      );
     } else {
       setCircleBorder(circle, "none");
     }
