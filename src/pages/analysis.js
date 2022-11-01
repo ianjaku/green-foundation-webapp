@@ -63,7 +63,3 @@ stacks.forEach(stack => {
     }
   });
 });
-
-// dataCenters.forEach(dataCenter => {
-//   addCircle(map, dataCenter.coords, "orange")
-// })
