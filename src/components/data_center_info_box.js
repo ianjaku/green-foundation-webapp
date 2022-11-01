@@ -25,5 +25,6 @@ export const showDataCenterInfoBox = (
 }
 
 export const hideDataCenterInfoBox = () => {
-  el.classList.remove(".data-center--active");
+  const el = document.querySelector(".data-center");
+  el.classList.remove("data-center--active");
 }

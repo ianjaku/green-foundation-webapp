@@ -2,6 +2,8 @@ import dataCenters from "../data/data_centers.json";
 import mitt from "mitt";
 import { createLeafletMap, addCircle, setCircleBorder } from "../components/leaflet_map";
 import { showDataCenterInfoBox } from "../components/data_center_info_box";
+import { hideStackInfoBox, showStackInfoBox } from "../components/stack_info_box";
+import { getRatingForStack, getStacks } from "../components/gms_client";
 
 
 const map = createLeafletMap('map');
@@ -28,7 +30,7 @@ const getDataCenterEfficiency = (dataCenterCode) => {
 }
 
 
-const selectionEmitter = mitt();
+const emitter = mitt();
 
 
 dataCenters.forEach(dataCenter => {
@@ -37,23 +39,41 @@ dataCenters.forEach(dataCenter => {
   const green = 255 * efficiency;
 
   const onClick = () => {
-    selectionEmitter.emit("select", dataCenter.code);
+    emitter.emit("select", dataCenter.code);
   }
   const circle = addCircle(map, dataCenter.coords, `rgba(${red}, ${green}, 0)`, onClick, dataCenter.code);
 
-  selectionEmitter.on("select", (code) => {
+  emitter.on("select", (code) => {
+    hideStackInfoBox();
     if (code === dataCenter.code) {
+      const stacksExpansion = `<button id="expand_${dataCenter.code}">Expand</button>`;
       setCircleBorder(circle, "blue");
       showDataCenterInfoBox(
         dataCenter.full_name,
         [
-          { label: "Region name", value: dataCenter.code },
+          { label: "Region code", value: dataCenter.code },
           { label: "Carbon Efficiency", value: Math.round(efficiency * 100) + "%" },
-          { label: "Services", value: "x services" }
+          { label: "Stacks", value: stacksExpansion } // TODO: maybe have button only when there are stacks
         ]
       );
+      document.getElementById(`expand_${dataCenter.code}`)
+        .addEventListener('click', () => { emitter.emit("expand", dataCenter.code); }, false);
     } else {
       setCircleBorder(circle, "none");
     }
+  });
+
+  emitter.on("expand", (code) => {
+    const stacks = getStacks();
+    const regionStacks = stacks.filter((stack) => stack.region === code)
+      .map((stack) => ({
+        "label": stack.name.split('/')[1], // Just the name
+        "value": getRatingForStack(stack.id)
+      }));
+      const title = regionStacks.length === 0 ? `No stacks in ${code}` : `Stacks in ${code}`;
+    showStackInfoBox(
+      title,
+      regionStacks
+    );
   });
 });
