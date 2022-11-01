@@ -1,7 +1,7 @@
 
 # Must haves
 
-- [ ] Create mocks for the back-end
+- [x] Create mocks for the back-end
 - [ ] Show a list of services in a modal when clicking on "x services"
 - [ ] Create a modal for Shivam's graphs when clicking on energy efficiency in all_locations.html
 
