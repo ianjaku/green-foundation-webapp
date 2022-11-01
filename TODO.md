@@ -11,7 +11,7 @@
 - [x] In analysis.html, show extra information about a stack when clicking on it's circle on the map
 - [x] In the analysis, show a circle around the selected data center
 - [ ] Add an explanation that analysis is of your current stack, and all_locations compares all available data centers.
-- [ ] In the analysis, show a list of better data centers when a data center is selected
+- [x] In the analysis, show a list of better data centers when a data center is selected
 - [ ] Write more todos
 
 # Questions

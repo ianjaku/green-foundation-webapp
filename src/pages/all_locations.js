@@ -45,7 +45,8 @@ dataCenters.forEach(dataCenter => {
     if (code === dataCenter.code) {
       setCircleBorder(circle, "blue");
       showDataCenterInfoBox(
-        dataCenter.full_name,
+        ".data-center",
+        dataCenter.name,
         [
           { label: "Region name", value: dataCenter.code },
           { label: "Carbon Efficiency", value: Math.round(efficiency * 100) + "%" },

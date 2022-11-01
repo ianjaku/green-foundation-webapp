@@ -71,6 +71,9 @@
 .data-center--active {
   display: block;
 }
+.data-center--right1 {
+  left: 265px;
+}
 
 .data-center__title {
   font-size: 1.5rem;
@@ -93,6 +96,11 @@
   font-family: sans-serif;
   margin-top: 3px;
   font-size: 1em;
+}
+
+.data-center__improvement {
+  color: green;
+  font-size: 14px;
 }
 
 

@@ -1,9 +1,10 @@
 
 export const showDataCenterInfoBox = (
+  selector,
   title,
   rows, // format: [{label: string, value: string, onClink?: () => void }]
 ) => {
-  const el = document.querySelector(".data-center");
+  const el = document.querySelector(selector);
 
   const titleEl = el.querySelector(".data-center__title");
   titleEl.innerHTML = title;
@@ -15,15 +16,29 @@ export const showDataCenterInfoBox = (
         ${row.label}
       </div>
       <div class="data-center__value" id="regionName">
-        ${row.value}
+        ${row.onClick ? `<a href="#" class="data-center__link" data-label="${row.label}">` : ''}
+          ${row.value}
+          ${row.improvement ? ` <span class="data-center__improvement">(${row.improvement})</span>` : ''}
+        ${row.onClick ? '</a>' : ''}
       </div>
     </div>
   `);
+  console.log(rowsHtml)
   rowsEl.innerHTML = rowsHtml.join("\n");
+
+  rowsEl.querySelectorAll(".data-center__link").forEach(el => {
+    const label = el.dataset.label;
+    const row = rows.find(row => row.label === label);
+    el.addEventListener("click", e => {
+      e.preventDefault();
+      row?.onClick();
+    });
+  });
 
   el.classList.add("data-center--active");
 }
 
-export const hideDataCenterInfoBox = () => {
-  el.classList.remove(".data-center--active");
+export const hideDataCenterInfoBox = (selector) => {
+  const el = document.querySelector(selector);
+  el.classList.remove("data-center--active");
 }

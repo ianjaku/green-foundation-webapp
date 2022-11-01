@@ -2,7 +2,7 @@ import { getRatingForStack, getStackDetails, getStacks } from "../components/gms
 import { addCircle, createLeafletMap, setCircleBorder } from "../components/leaflet_map";
 import dataCenters from "../data/data_centers.json";
 import mitt from "mitt";
-import { showDataCenterInfoBox } from "../components/data_center_info_box";
+import { hideDataCenterInfoBox, showDataCenterInfoBox } from "../components/data_center_info_box";
 import { getDistanceBetweenTwoCoords } from "../helpers/geo";
 import { getRelativeEfficiency } from "../helpers/carbon";
 
@@ -12,21 +12,6 @@ const stacks = getStacks();
 const map = createLeafletMap("map");
 const selectionEmitter = mitt();
 
-const getEfficiencyForDataCenter = (region) => {
-  const dataCenter = dataCenters.find(dataCenter => dataCenter.code === region);
-
-  const nearbyDataCenters = dataCenters.filter(dc => {
-    return getDistanceBetweenTwoCoords(dataCenter.coords, dc.coords) < RELATIVE_CARBON_RANGE_DEGREES;
-  });
-
-  return getRelativeEfficiency(region, nearbyDataCenters);
-}
-
-const getColorForEfficiency = (efficiency) => {
-  const red = 255 * (1 - efficiency);
-  const green = 255 * efficiency;
-  return `rgb(${red}, ${green}, 0)`;
-}
 
 stacks.forEach(stack => {
   const details = getStackDetails(stack.id);
@@ -36,28 +21,61 @@ stacks.forEach(stack => {
     return;
   }
 
-  const efficiency = getEfficiencyForDataCenter(stack.region);
-  
-  console.log(efficiency)
+  const nearbyDataCenters = dataCenters.filter(dc => {
+    return getDistanceBetweenTwoCoords(dataCenter.coords, dc.coords) < RELATIVE_CARBON_RANGE_DEGREES;
+  });
+  const efficiency = getRelativeEfficiency(stack.region, nearbyDataCenters);
+  const rating = getRatingForStack(stack.region);
+
   const circle = addCircle(
     map,
     dataCenter.coords,
-    getColorForEfficiency(efficiency),
+    `rgba(${255 * (1 - efficiency)}, ${255 * efficiency}, 0)`,
     () => selectionEmitter.emit("select", stack.region),
     stack.region
   );
 
+  const showComparisonBox = () => {
+    showDataCenterInfoBox(
+      "#comparison",
+      "Comparison",
+      nearbyDataCenters.map(dc => {
+        const dcRating = getRatingForStack(dc.region);
+        if (dcRating > rating) return null;
+        const relativeRating = Math.round(((rating - dcRating) / rating) * 100);
+        return {
+          label: dc.code,
+          value: `${Math.round(dcRating)}kg/h`,
+          improvement: `-${relativeRating}%`,
+          sort: dc.rating
+        }
+      }).filter(dc => dc != null)
+        .sort((a, b) => b.sort - a.sort)
+    );
+  }
+
+  const showDataCenterInfo = () => {
+    showDataCenterInfoBox(
+      "#data-center",
+      dataCenter.name,
+      [
+        { label: "Region", value: stack.region },
+        {
+          label: "Carbon efficiency",
+          value: `${Math.round(rating)}kg/h (${Math.round(efficiency * 100)}%)`,
+          // Don't need an onClick when it's already the most efficient
+          onClick: efficiency === 1 ? undefined : () => showComparisonBox()
+        },
+        { label: "Size", value: `${details.resources.length} resources` }
+      ]
+    );
+  }
+
   selectionEmitter.on("select", (region) => {
+    hideDataCenterInfoBox("#comparison");
     if (region === stack.region) {
       setCircleBorder(circle, "blue");
-      showDataCenterInfoBox(
-        dataCenter.full_name,
-        [
-          { label: "Region", value: region },
-          { label: "Carbon efficiency", value: Math.round(efficiency * 100) + "%" },
-          { label: "Size", value: `${details.resources.length} resources` }
-        ]
-      );
+      showDataCenterInfo();
     } else {
       setCircleBorder(circle, "none");
     }
