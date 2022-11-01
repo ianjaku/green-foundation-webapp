@@ -47,10 +47,10 @@ stacks.forEach(stack => {
           label: dc.code,
           value: `${Math.round(dcRating)}kg/h`,
           improvement: `-${relativeRating}%`,
-          sort: dc.rating
+          sort: dcRating
         }
       }).filter(dc => dc != null)
-        .sort((a, b) => b.sort - a.sort)
+        .sort((a, b) => a.sort - b.sort)
     );
   }
 
