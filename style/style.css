@@ -103,6 +103,46 @@
   font-size: 14px;
 }
 
+.stack {
+  position: fixed;
+  z-index: 401;
+  left: 50px;
+  top: 350px;
+  width: 200px;
+  /* height: 400px; */
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 6px;
+  box-sizing: border-box;
+  padding: 20px;
+  padding-bottom: 40px;
+  display: none;
+}
+.stack--active {
+  display: block;
+}
+
+.stack__title {
+  font-size: 1.5rem;
+  font-family: sans-serif;
+}
+
+.stack__row {
+  padding-top: 20px;
+}
+
+.stack__label {
+  font-size: 12px;
+  font-weight: bold;
+  color: gray;
+  font-family: sans-serif;
+  text-transform: uppercase;
+}
+
+.stack__value {
+  font-family: sans-serif;
+  margin-top: 3px;
+  font-size: 1em;
+}
 
 /* TODO: replace with something meaningful */
 .text-labels {
