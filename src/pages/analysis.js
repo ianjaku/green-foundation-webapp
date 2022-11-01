@@ -40,7 +40,7 @@ stacks.forEach(stack => {
       "#comparison",
       "Comparison",
       nearbyDataCenters.map(dc => {
-        const dcRating = getRatingForStack(dc.region);
+        const dcRating = getRatingForStack(dc.code);
         if (dcRating > rating) return null;
         const relativeRating = Math.round(((rating - dcRating) / rating) * 100);
         return {

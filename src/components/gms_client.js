@@ -176,7 +176,12 @@ export const getStackDetails = (id) => {
     }
 };
 
+let values = {};
+// Equivalent of calling /emission/stack/<id> (and selecting the contents of "data" in the response)
 export const getRatingForStack = (id) => {
-    // Equivalent of calling /emission/stack/<id> (and selecting the contents of "data" in the response)
-    return Math.random() * 100;
+    if (values[id] != null) {
+        return values[id];
+    }
+    const rating = Math.random() * 100;
+    return rating;
 };

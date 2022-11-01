@@ -19,6 +19,7 @@
 
 # Questions
 
+- Make getRatingForStack real or improve mock?
 - Problem with mercator projection :/
 - How do we calculate efficiency?
   - worst -> best
