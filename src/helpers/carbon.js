@@ -15,10 +15,9 @@ export const getRelativeEfficiency = (
   const dataCenter = dataCenters.find(dc => dc.code === region);
 
   const ratings = dataCenters.map(dc => {
-    const rating = getRatingForStack(dc.code);
     return {
       region: dc.code,
-      value: rating
+      value: getRatingForStack(dc.code)
     }
   });
 
@@ -26,5 +25,10 @@ export const getRelativeEfficiency = (
   const worstRating = ratings.reduce((a, b) => a.value > b.value ? a : b);
 
   const rating = ratings.find(rating => rating.region === dataCenter.code);
-  return (rating.value - bestRating.value) / (worstRating.value - bestRating.value);
+  return (rating.value - worstRating.value) / (bestRating.value - worstRating.value);
+  // return (rating.value - bestRating.value) / (worstRating.value - bestRating.value);
 }
+
+// uitstootA, besteUitstoot
+// uitstootA - slechtste, besteUitstoot - slechtste
+// percentage = uitstootA - slechtste / besteUitstoot - slechtste

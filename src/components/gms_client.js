@@ -1,3 +1,4 @@
+
 export const getStacks = () => {
     // Equivalent of calling /stack (and selecting the contents of "data" in the response)
     return [
@@ -179,9 +180,13 @@ export const getStackDetails = (id) => {
 let values = {};
 // Equivalent of calling /emission/stack/<id> (and selecting the contents of "data" in the response)
 export const getRatingForStack = (id) => {
+    if (id == null) {
+        throw new Error("Id cannot be null");
+    }
     if (values[id] != null) {
         return values[id];
     }
     const rating = Math.random() * 100;
+    values[id] = rating;
     return rating;
 };

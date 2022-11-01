@@ -54,20 +54,26 @@
   border-color: #666;
 }
 
-.data-center {
+.data-center__wrapper {
   position: fixed;
   z-index: 401;
   left: 50px;
   top: 50px;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.data-center {
   width: 200px;
-  /* height: 400px; */
   background-color: rgba(255, 255, 255, 0.95);
-  border-radius: 6px;
-  box-sizing: border-box;
   padding: 20px;
   padding-bottom: 40px;
   display: none;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  box-sizing: border-box;
 }
+
 .data-center--active {
   display: block;
 }

@@ -23,7 +23,6 @@ export const showDataCenterInfoBox = (
       </div>
     </div>
   `);
-  console.log(rowsHtml)
   rowsEl.innerHTML = rowsHtml.join("\n");
 
   rowsEl.querySelectorAll(".data-center__link").forEach(el => {
