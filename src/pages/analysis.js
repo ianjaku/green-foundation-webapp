@@ -81,7 +81,7 @@ activeRegions.forEach(region => {
       ));
     showDataCenterInfoBox(
       "#stack",
-      "",
+      "Stacks",
       regionalStacks
     );
   }
