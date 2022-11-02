@@ -49,6 +49,7 @@ dataCenters.forEach(dataCenter => {
         dataCenter.name,
         [
           { label: "Region code", value: dataCenter.code },
+          { label: "Type", value: "AWS" },
           { label: "Carbon Efficiency", value: Math.round(efficiency * 100) + "%" },
         ]
       );
