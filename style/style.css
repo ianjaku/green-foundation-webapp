@@ -54,6 +54,16 @@
   border-color: #666;
 }
 
+.page-link {
+  position: fixed;
+  z-index: 401;
+  right: 4px;
+  top: 2px;
+  display: flex;
+  flex-flow: column nowrap;
+  float: right;
+}
+
 .data-center__wrapper {
   position: fixed;
   z-index: 401;

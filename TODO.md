@@ -4,8 +4,9 @@
 - [x] Create mocks for the back-end
 - [x] Show a list of services in a modal when clicking on "x services"
 - [x] Update to show "x services" again rather than "expand"
+- [x] Remove extra code from all_locations related to stacks details (not needed anymore)
+- [x] Add links to jump between pages
 - [ ] Create a modal for Shivam's graphs when clicking on energy efficiency in all_locations.html
-- [ ] Remove extra code from all_locations related to stacks details (not needed anymore)
 
 - [x] Edit current text to say "stack" instead of "service"
 - [x] In analysis.html, show all data centers as circles on the generic map
