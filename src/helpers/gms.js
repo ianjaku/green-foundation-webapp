@@ -8,13 +8,7 @@ export const getActiveRegionsFromStacks = (stacks) => {
   return Array.from(regions);
 }
 
-export const getAllResourcesForRegion = (region) => {
+export const getAllStacksForRegion = (region) => {
   const stacks = getStacks();
-  const resources = [];
-  for (let stack of stacks) {
-    if (stack.region !== region) continue;
-    const details = getStackDetails(stack.id);
-    resources.push(...details.resources);
-  }
-  return resources;
+  return stacks.filter((stack) => stack.region === region);
 }

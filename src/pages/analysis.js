@@ -1,11 +1,11 @@
-import { getRatingForStack, getStacks } from "../components/gms_client";
+import { getRatingForStack, getStackDetails, getStacks } from "../components/gms_client";
 import { addCircle, createLeafletMap, setCircleBorder } from "../components/leaflet_map";
 import dataCenters from "../data/data_centers.json";
 import mitt from "mitt";
 import { hideDataCenterInfoBox, showDataCenterInfoBox } from "../components/data_center_info_box";
 import { getDistanceBetweenTwoCoords } from "../helpers/geo";
 import { getRelativeEfficiency } from "../helpers/carbon";
-import { getActiveRegionsFromStacks, getAllResourcesForRegion } from "../helpers/gms";
+import { getActiveRegionsFromStacks, getAllStacksForRegion } from "../helpers/gms";
 
 const RELATIVE_CARBON_RANGE_DEGREES = 25;
 
@@ -66,9 +66,23 @@ activeRegions.forEach(region => {
           label: "Carbon rating",
           value: `${Math.round(rating)}kg/h`
           // value: `${Math.round(rating)}kg/h (${Math.round(efficiency * 100)}%)`,
-        },
-        { label: "Size", value: `${getAllResourcesForRegion(region).length} resources` }
+        }
       ]
+    );
+  }
+
+  const showStacksInfo = () => {
+    const regionalStacks = getAllStacksForRegion(region)
+      .map((stack) => (
+        {
+          label: stack.name.split('/')[1],
+          value: `${getStackDetails(stack.id).resources.length} resources`
+        }
+      ));
+    showDataCenterInfoBox(
+      "#stack",
+      "",
+      regionalStacks
     );
   }
 
@@ -76,6 +90,7 @@ activeRegions.forEach(region => {
     if (region === selectedRegion) {
       setCircleBorder(circle, "blue");
       showDataCenterInfo();
+      showStacksInfo();
       if (efficiency !== 1) {
         showComparisonBox();
       } else {

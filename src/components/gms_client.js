@@ -186,7 +186,7 @@ export const getRatingForStack = (id) => {
     if (values[id] != null) {
         return values[id];
     }
-    const rating = Math.random() * 100;
+    const rating = Math.random() * 400 + 200;
     values[id] = rating;
     return rating;
 };
