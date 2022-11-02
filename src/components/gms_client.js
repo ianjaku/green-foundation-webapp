@@ -26,6 +26,26 @@ export const getStacks = () => {
             "id": 33379124,
             "name": "arn:aws:cloudformation:eu-west-1:254306680133:stack/aNvwRCIrfZid/a85a9928-7b65-4b6e-a46c-729c00943e28",
             "region": "eu-west-1",
+        },
+        {
+            "id": 66677562,
+            "name": "arn:aws:cloudformation:us-east-2:254306680133:stack/jDeleDoxdcVz/644004d5-b1a8-409a-8772-65b01de1d03e",
+            "region": "us-east-2",
+        },
+        {
+            "id": 58113447,
+            "name": "arn:aws:cloudformation:us-west-1:254306680133:stack/vtcFLAFPkvfb/1a80e904-bbbf-4253-bc60-b1a4df404e85",
+            "region": "us-west-1"
+        },
+        {
+            "id": 34045983,
+            "name": "arn:aws:cloudformation:eu-west-3:254306680133:stack/rTchOzyspEEx/ca5253a8-eb46-4023-ad56-c7c2cfc1a2fc",
+            "region": "eu-west-3",
+        },
+        {
+            "id": 22307571,
+            "name": "arn:aws:cloudformation:eu-south-1:254306680133:stack/LifjdgmIKYse/7da44f67-2072-4776-862a-ee1994fb2e15",
+            "region": "eu-south-1",
         }
     ]
 };
@@ -169,6 +189,98 @@ export const getStackDetails = (id) => {
                 {
                     "id": 22651239,
                     "name": "qykJDTYUSjus",
+                    "resourceType": "AWS::ECS::Cluster",
+                    "status": "CREATE_COMPLETE"
+                }
+            ]
+        };
+    } else if (id === 66677562) {
+        return {
+            "id": 66677562,
+            "name": "arn:aws:cloudformation:us-east-2:254306680133:stack/jDeleDoxdcVz/644004d5-b1a8-409a-8772-65b01de1d03e",
+            "region": "us-east-2",
+            "resources": [
+                {
+                    "id": 64399886,
+                    "name": "OnPDePdGIenp",
+                    "resourceType": "AWS::EKS::Cluster",
+                    "status": "CREATE_COMPLETE"
+                },
+                {
+                    "id": 44136763,
+                    "name": "xMBTEWDKqwHW",
+                    "resourceType": "AWS::EKS::Cluster",
+                    "status": "CREATE_COMPLETE"
+                },
+                {
+                    "id": 76961203,
+                    "name": "SLlKpCRhdyxQ",
+                    "resourceType": "AWS::EKS::Cluster",
+                    "status": "CREATE_COMPLETE"
+                },
+                {
+                    "id": 10646777,
+                    "name": "LibkRUgHNcrc",
+                    "resourceType": "AWS::EKS::Cluster",
+                    "status": "CREATE_COMPLETE"
+                }
+            ]
+        }
+    } else if (id === 58113447) {
+        return {
+            "id": 58113447,
+            "name": "arn:aws:cloudformation:us-west-1:254306680133:stack/vtcFLAFPkvfb/1a80e904-bbbf-4253-bc60-b1a4df404e85",
+            "region": "us-west-1",
+            "resources": [
+                {
+                    "id": 24821538,
+                    "name": "bIFnFdgIOTcv",
+                    "resourceType": "AWS::EKS::Cluster",
+                    "status": "CREATE_COMPLETE"
+                },
+                {
+                    "id": 90613588,
+                    "name": "VkkNHtUENWWp",
+                    "resourceType": "AWS::EKS::Cluster",
+                    "status": "CREATE_COMPLETE"
+                }
+            ]
+        };
+    } else if (id === 34045983) {
+        return {
+            "id": 34045983,
+            "name": "arn:aws:cloudformation:eu-west-3:254306680133:stack/rTchOzyspEEx/ca5253a8-eb46-4023-ad56-c7c2cfc1a2fc",
+            "region": "eu-west-3",
+            "resources": [
+                {
+                    "id": 3365152,
+                    "name": "DgersfVBacFH",
+                    "resourceType": "AWS::ECS::Cluster",
+                    "status": "CREATE_COMPLETE"
+                },
+                {
+                    "id": 59904431,
+                    "name": "XabelxqiyHcV",
+                    "resourceType": "AWS::ECS::Cluster",
+                    "status": "CREATE_COMPLETE"
+                }
+            ]
+        };
+    } else if (id === 22307571) {
+        return {
+            "id": 22307571,
+            "name": "arn:aws:cloudformation:eu-south-1:254306680133:stack/LifjdgmIKYse/7da44f67-2072-4776-862a-ee1994fb2e15",
+            "region": "eu-south-1",
+            "resources": [
+                {
+                    "id": 35532295,
+                    "name": "CoHEuMkobDCV",
+                    "resourceType": "AWS::ECS::Cluster",
+                    "status": "CREATE_COMPLETE"
+                },
+                {
+                    "id": 89684109,
+                    "name": "RUVhZkAiVbap",
                     "resourceType": "AWS::ECS::Cluster",
                     "status": "CREATE_COMPLETE"
                 }
