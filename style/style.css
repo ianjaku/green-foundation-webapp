@@ -114,8 +114,12 @@
   font-size: 1em;
 }
 
-.data-center__improvement {
+.data-center__good {
   color: green;
+  font-size: 14px;
+}
+.data-center__bad {
+  color: red;
   font-size: 14px;
 }
 

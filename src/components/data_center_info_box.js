@@ -18,7 +18,8 @@ export const showDataCenterInfoBox = (
       <div class="data-center__value" id="regionName">
         ${row.onClick ? `<a href="#" class="data-center__link" data-label="${row.label}">` : ''}
           ${row.value}
-          ${row.improvement ? ` <span class="data-center__improvement">(${row.improvement})</span>` : ''}
+          ${row.good ? ` <span class="data-center__good">(${row.good})</span>` : ''}
+          ${row.bad ? ` <span class="data-center__bad">(${row.bad})</span>` : ''}
         ${row.onClick ? '</a>' : ''}
       </div>
     </div>

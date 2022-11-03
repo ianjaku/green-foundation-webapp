@@ -42,19 +42,19 @@ activeRegions.forEach(region => {
   );
 
   const showComparisonBox = () => {
-    console.log("Nearby:", nearbyDataCenters)
     showDataCenterInfoBox(
       "#comparison",
       "Comparison",
       nearbyDataCenters.map(dc => {
         console.log("rating:", rating)
+        if (dc.code === dataCenter.code) return null;
         const dcRating = getRatingForStack(dc.code);
-        if (dcRating > rating) return null;
         const relativeRating = Math.round(((rating - dcRating) / rating) * 100);
         return {
           label: dc.code,
           value: `${Math.round(dcRating)}kg/kwh`,
-          improvement: `-${relativeRating}%`,
+          good: dcRating <= rating ? `-${relativeRating}%` : undefined,
+          bad: dcRating > rating ? `-${relativeRating}%` : undefined,
           sort: dcRating
         }
       }).filter(dc => dc != null)
@@ -98,11 +98,12 @@ activeRegions.forEach(region => {
         dc.coords,
         dataCenter.coords,
       ], {
-        opacity: 0.5,
-        color,
+        opacity: 0.3,
+        color: "blue",
         fill: false,
         weight: 2
       }).addTo(map);
+      line.bindTooltip(dc.name);
       dataCenterSpecificMapItems.push(line)
     });
   }
@@ -124,11 +125,7 @@ activeRegions.forEach(region => {
       showStacksInfo();
       showComparisonLines();
       showComparisonDistanceCircle();
-      if (efficiency !== 1) {
-        showComparisonBox();
-      } else {
-        hideDataCenterInfoBox("#comparison");
-      }
+      showComparisonBox();
     } else {
       setCircleBorder(circle, "none");
     }

@@ -10,9 +10,9 @@
 - [ ] Add an explanation that analysis is of your current stack, and all_locations compares all available data centers.
 
 - [x] Create links at the top right between the two pages
-- [ ] In analysis, show all suggested options and draw lines to them to show what is being compared
+- [x] In analysis, show all suggested options and draw lines to them to show what is being compared
 - [ ] In analysis comparison, use name of region instead of region code as label
-- [ ] Also compare with less efficient regions, always show comparison
+- [x] Also compare with less efficient regions, always show comparison
 - [ ] Overall score based on all data centers
 
 - [x] Edit current text to say "stack" instead of "service"
