@@ -47,7 +47,7 @@ activeRegions.forEach(region => {
         const relativeRating = Math.round(((rating - dcRating) / rating) * 100);
         return {
           label: dc.code,
-          value: `${Math.round(dcRating)}kg/h`,
+          value: `${Math.round(dcRating)}kg/kwh`,
           improvement: `-${relativeRating}%`,
           sort: dcRating
         }
@@ -64,7 +64,7 @@ activeRegions.forEach(region => {
         { label: "Region", value: region },
         {
           label: "Carbon rating",
-          value: `${Math.round(rating)}kg/h`
+          value: `${Math.round(rating)}kg/kwh`
           // value: `${Math.round(rating)}kg/h (${Math.round(efficiency * 100)}%)`,
         },
         { label: "Size", value: `${getAllResourcesForRegion(region).length} resources` }

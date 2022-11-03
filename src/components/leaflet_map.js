@@ -10,7 +10,6 @@ export const createLeafletMap = (htmlId) => {
     maxZoom: 4,
     minZoom: 3,
     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    noWrap: true,
   }).addTo(map);
 
   return map;
