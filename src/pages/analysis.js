@@ -7,12 +7,13 @@ import { getDistanceBetweenTwoCoords } from "../helpers/geo";
 import { getRelativeEfficiency } from "../helpers/carbon";
 import { getActiveRegionsFromStacks, getAllStacksForRegion } from "../helpers/gms";
 
-const RELATIVE_CARBON_RANGE_DEGREES = 25;
+const RELATIVE_CARBON_RANGE_DEGREES = 20;
 
 const stacks = getStacks();
 const activeRegions = getActiveRegionsFromStacks(stacks);
 const map = createLeafletMap("map");
 const selectionEmitter = mitt();
+let dataCenterSpecificMapItems = [];
 
 activeRegions.forEach(region => {
   const dataCenter = dataCenters.find(dataCenter => dataCenter.code === region);
@@ -26,12 +27,17 @@ activeRegions.forEach(region => {
   });
   const efficiency = getRelativeEfficiency(region, nearbyDataCenters);
   const rating = getRatingForStack(region);
+  const color = `rgba(${255 * (1 - efficiency)}, ${255 * efficiency}, 0)`;
 
   const circle = addCircle(
     map,
     dataCenter.coords,
-    `rgba(${255 * (1 - efficiency)}, ${255 * efficiency}, 0)`,
-    () => selectionEmitter.emit("select", region),
+    color,
+    () => {
+      dataCenterSpecificMapItems.forEach(item => item.removeFrom(map));
+      dataCenterSpecificMapItems = [];
+      selectionEmitter.emit("select", region)
+    },
     region
   );
 
@@ -86,11 +92,38 @@ activeRegions.forEach(region => {
     );
   }
 
+  const showComparisonLines = () => {
+    nearbyDataCenters.forEach((dc) => {
+      const line = L.polygon([
+        dc.coords,
+        dataCenter.coords,
+      ], {
+        opacity: 0.5,
+        color,
+        fill: false,
+        weight: 2
+      }).addTo(map);
+      dataCenterSpecificMapItems.push(line)
+    });
+  }
+
+  const showComparisonDistanceCircle = () => {
+    const circle = L.circle(dataCenter.coords, {
+      color: "blue",
+      opacity: 0.1,
+      fill: false,
+      radius: 111 * 1000 * RELATIVE_CARBON_RANGE_DEGREES
+    }).addTo(map);
+    dataCenterSpecificMapItems.push(circle);
+  }
+
   selectionEmitter.on("select", (selectedRegion) => {
     if (region === selectedRegion) {
       setCircleBorder(circle, "blue");
       showDataCenterInfo();
       showStacksInfo();
+      showComparisonLines();
+      showComparisonDistanceCircle();
       if (efficiency !== 1) {
         showComparisonBox();
       } else {
