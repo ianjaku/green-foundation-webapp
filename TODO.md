@@ -9,7 +9,7 @@
 - [ ] Create a modal for Shivam's graphs when clicking on energy efficiency in all_locations.html
 - [ ] Add an explanation that analysis is of your current stack, and all_locations compares all available data centers.
 
-- [ ] Create links at the top right between the two pages
+- [x] Create links at the top right between the two pages
 - [ ] In analysis, show all suggested options and draw lines to them to show what is being compared
 - [ ] In analysis comparison, use name of region instead of region code as label
 - [ ] Also compare with less efficient regions, always show comparison
