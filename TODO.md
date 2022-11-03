@@ -11,7 +11,7 @@
 
 - [x] Create links at the top right between the two pages
 - [x] In analysis, show all suggested options and draw lines to them to show what is being compared
-- [ ] In analysis comparison, use name of region instead of region code as label
+- [x] In analysis comparison, use name of region instead of region code as label
 - [x] Also compare with less efficient regions, always show comparison
 - [ ] Overall score based on all data centers
 

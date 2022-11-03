@@ -51,7 +51,7 @@ activeRegions.forEach(region => {
         const dcRating = getRatingForStack(dc.code);
         const relativeRating = Math.round(((rating - dcRating) / rating) * 100);
         return {
-          label: dc.code,
+          label: dc.name,
           value: `${Math.round(dcRating)}kg/kwh`,
           good: dcRating <= rating ? `-${relativeRating}%` : undefined,
           bad: dcRating > rating ? `-${relativeRating}%` : undefined,
