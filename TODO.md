@@ -9,11 +9,13 @@
 - [ ] Create a modal for Shivam's graphs when clicking on energy efficiency in all_locations.html
 - [ ] Add an explanation that analysis is of your current stack, and all_locations compares all available data centers.
 
+- [ ] Edit text in top right links
+- [ ] Show kg/kwh in carbon efficiency in all_locations
 - [x] Create links at the top right between the two pages
 - [x] In analysis, show all suggested options and draw lines to them to show what is being compared
 - [x] In analysis comparison, use name of region instead of region code as label
 - [x] Also compare with less efficient regions, always show comparison
-- [ ] Overall score based on all data centers
+- [ ] Overall score based on all data centers (average)
 
 - [x] Edit current text to say "stack" instead of "service"
 - [x] In analysis.html, show all data centers as circles on the generic map
@@ -28,11 +30,14 @@
 
 # Questions
 
-- Make getRatingForStack real or improve mock?
-- Problem with mercator projection :/
-- How do we calculate efficiency?
-  - worst -> best
-  - best x percent
+- How to calculate total score?
+  Idea:
+    Show average co2 usage over all stacks
+    For every stack
+      1. Calculate how much percentage the best data center would improve you
+      2. Combine these together to a total improvement possibility
+      3. 
+
 
 # Presentation
 
@@ -52,3 +57,8 @@
     Describe what is your vision for how the solution you have started to build in this hackathon could make a difference to the world.
 
     The URL to the prototype app and/or code (e.g. Github + e.g. example.com/Carb22solution)
+
+
+# Script
+
+

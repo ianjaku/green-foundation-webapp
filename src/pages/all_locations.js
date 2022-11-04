@@ -33,6 +33,7 @@ const emitter = mitt();
 
 dataCenters.forEach(dataCenter => {
   const efficiency = getDataCenterEfficiency(dataCenter.code);
+  const rating = ratings.find(rating => rating.code === dataCenter.code);
   const red = 255 * (1 - efficiency);
   const green = 255 * efficiency;
 
@@ -50,7 +51,7 @@ dataCenters.forEach(dataCenter => {
         [
           { label: "Region code", value: dataCenter.code },
           { label: "Type", value: "AWS" },
-          { label: "Carbon Efficiency", value: Math.round(efficiency * 100) + "%" },
+          { label: "Carbon Efficiency", value: rating.value + "kg/kwh" },
         ]
       );
     } else {

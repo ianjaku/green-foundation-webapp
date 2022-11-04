@@ -49,12 +49,12 @@ activeRegions.forEach(region => {
         console.log("rating:", rating)
         if (dc.code === dataCenter.code) return null;
         const dcRating = getRatingForStack(dc.code);
-        const relativeRating = Math.round(((rating - dcRating) / rating) * 100);
+        const relativeRating = Math.abs(Math.round(((rating - dcRating) / rating) * 100));
         return {
           label: dc.name,
           value: `${Math.round(dcRating)}kg/kwh`,
           good: dcRating <= rating ? `-${relativeRating}%` : undefined,
-          bad: dcRating > rating ? `-${relativeRating}%` : undefined,
+          bad: dcRating > rating ? `+${relativeRating}%` : undefined,
           sort: dcRating
         }
       }).filter(dc => dc != null)
@@ -113,7 +113,7 @@ activeRegions.forEach(region => {
       color: "blue",
       opacity: 0.1,
       fill: false,
-      radius: 111 * 1000 * RELATIVE_CARBON_RANGE_DEGREES
+      radius: 111 * 1000 * (RELATIVE_CARBON_RANGE_DEGREES - 5)
     }).addTo(map);
     dataCenterSpecificMapItems.push(circle);
   }
