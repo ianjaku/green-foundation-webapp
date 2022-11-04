@@ -2,6 +2,7 @@ import dataCenters from "../data/data_centers.json";
 import mitt from "mitt";
 import { createLeafletMap, addCircle, setCircleBorder } from "../components/leaflet_map";
 import { showDataCenterInfoBox } from "../components/data_center_info_box";
+import { getRelativeEfficiency } from "../helpers/carbon";
 
 
 const map = createLeafletMap('map');
@@ -32,7 +33,7 @@ const emitter = mitt();
 
 
 dataCenters.forEach(dataCenter => {
-  const efficiency = getDataCenterEfficiency(dataCenter.code);
+  const efficiency = getRelativeEfficiency(dataCenter.code, dataCenters)
   const rating = ratings.find(rating => rating.code === dataCenter.code);
   const red = 255 * (1 - efficiency);
   const green = 255 * efficiency;
